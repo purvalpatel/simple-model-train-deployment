@@ -218,13 +218,24 @@ kubectl apply -f deployment.yaml
 kubectl apply -f hpa.yaml
 ```
 
-check scaling:
-```
-kubectl get hpa
-```
-
 Now test by generating load:
 ```
 while true; do curl -X POST http://10.96.11.14/predict  -H "Content-Type: application/json"  -d '{"text":"hello"}'; done
 ```
-Note: Here i am using cluster IP from host machine, it will only work for the single node cluster. because it is in the same network.
+Note: Here i am using cluster IP from host machine, it will only work for the single node cluster. because it is in the same network. <br>
+
+check scaling:
+```
+kubectl get hpa
+```
+If output is like this, <br>
+<img width="929" height="67" alt="image" src="https://github.com/user-attachments/assets/f7164b12-b9d2-4661-9c31-498afac93223" />
+
+Then there is an issue. <br>
+⚠️ HPA cannot read CPU metrics <br>
+⚠️ Your cluster does NOT have metrics-server installed <br>
+⚠️ So HPA will NEVER autoscale <br>
+
+
+
+
