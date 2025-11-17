@@ -236,7 +236,6 @@ Then there is an issue. <br>
 ⚠️ Your cluster does NOT have metrics-server installed <br>
 ⚠️ So HPA will NEVER autoscale <br>
 
-<img width="979" height="71" alt="image" src="https://github.com/user-attachments/assets/4ccd68bd-0aaf-494f-b421-c2eefb4891fa" />
 
 ### Install metrics server:
 ```
