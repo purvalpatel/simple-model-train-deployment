@@ -22,7 +22,7 @@ You can check this from the `settings -> Gated Repositories` <br>
 
 2. Run below command to start the container:
 ````
-docker run -d --ipc=host -p 8000:8000   --device=/dev/kfd   --device=/dev/dri -e HF_TOKEN=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  -v hf_cache:/root/.cache/huggingface   rocm/vllm:rocm7.0.0_vllm_0.11.1_20251103   python3 -m vllm.entrypoints.api_server   --model meta-llama/Llama-3.1-70B-Instruct   --tensor-parallel-size 4   --max-model-len 4096   --dtype auto   --gpu-memory-utilization 0.85   --disable-log-requests
+docker run -d --ipc=host -p 8000:8000   --device=/dev/kfd   --device=/dev/dri -e HF_TOKEN=hf_xxxxxxxxxxxxxxxx  -v hf_cache:/root/.cache/huggingface   rocm/vllm:rocm7.0.0_vllm_0.11.1_20251103   python3 -m vllm.entrypoints.api_server   --model meta-llama/Llama-3.1-70B-Instruct   --tensor-parallel-size 4   --max-model-len 4096   --dtype auto   --gpu-memory-utilization 0.85   --disable-log-requests
 ````
 
 sglang:
